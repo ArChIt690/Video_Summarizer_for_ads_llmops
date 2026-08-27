@@ -25,6 +25,7 @@ class VideoAudit(TypedDict):
     ocr_text : List[str]
     
     #analysis output
+    #stores list of violations found my Azure Ai search
     compliance_result : Annotated[List[ComplianceIssue], operator.add]
 
     #final deliveries
