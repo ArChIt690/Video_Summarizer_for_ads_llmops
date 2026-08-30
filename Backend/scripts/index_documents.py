@@ -23,13 +23,13 @@ def index_docs():
     original_path = os.path.dirname(os.path.abspath(__file__))
     file_path = os.path.join(original_path , "../data")
 
-    logging.info("="*60)
-    logging.info(f"AZURE_SEARCH_ENDPOINT = {os.getenv("AZURE_SEARCH_ENDPOINT")}")
-    logging.info(f"AZURE_SEARCH_INDEX_NAME = {os.getenv("AZURE_SEARCH_INDEX_NAME")}")
-    logging.info(f"AZURE_MISTRAL_ENDPOINT = {os.getenv("AZURE_MISTRAL_ENDPOINT")}")
-    logging.info(f"AZURE_MISTRAL_VERSION = {os.getenv("AZURE_MISTRAL_VERSION")}")
-    logging.info(f"AZURE_OPENAI_EMBEDDING_DEPLOYMENT = {os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT" , "text-embedding-3-small")}")
-    logging.info("="*60)
+    logger.info("="*60)
+    logger.info(f"AZURE_SEARCH_ENDPOINT = {os.getenv("AZURE_SEARCH_ENDPOINT")}")
+    logger.info(f"AZURE_SEARCH_INDEX_NAME = {os.getenv("AZURE_SEARCH_INDEX_NAME")}")
+    logger.info(f"AZURE_MISTRAL_ENDPOINT = {os.getenv("AZURE_MISTRAL_ENDPOINT")}")
+    logger.info(f"AZURE_MISTRAL_VERSION = {os.getenv("AZURE_MISTRAL_VERSION")}")
+    logger.info(f"AZURE_OPENAI_EMBEDDING_DEPLOYMENT = {os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT" , "text-embedding-3-small")}")
+    logger.info("="*60)
 
     required_vars = [
         "AZURE_SEARCH_ENDPOINT",
@@ -41,8 +41,8 @@ def index_docs():
 
     missing_var = [var for var in required_vars if not os.getenv(var)]
     if missing_var:
-        logging.error(f"Missing requirements env variable : {missing_var}")
-        logging.error("check your env variables")
+        logger.error(f"Missing requirements env variable : {missing_var}")
+        logger.error("check your env variables")
 
     #initialise embedding model and convert into vectors
     try:
@@ -52,11 +52,11 @@ def index_docs():
             AZURE_MISTRAL_VERSION = os.getenv("AZURE_MISTRAL_VERSION"),
             AZURE_OPENAI_EMBEDDING_DEPLOYMENT = os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT"),
         )
-        logging.info("succesfully integrated the api keys of the embdded model")
+        logger.info("succesfully integrated the api keys of the embdded model")
 
     except Exception as e:
-        logging.error(f"Error occured when loading the embedding model due to {e} ")
-        logging.error("Failed to load the embedding model ")
+        logger.error(f"Error occured when loading the embedding model due to {e} ")
+        logger.error("Failed to load the embedding model ")
 
     #initialise azure search
     try:
@@ -66,21 +66,21 @@ def index_docs():
             index_name = index_name,
             embedding_function = embedding_model.embed_query,
         )
-        logging.info(f"azure ai search configuration successfully installed with index name : {index_name}")
+        logger.info(f"azure ai search configuration successfully installed with index name : {index_name}")
     except Exception as e:
-        logging.error(f"Failed to configure Azure Search due to {e}")
-        logging.error("Make sure every api keys or end pints are correct")
+        logger.error(f"Failed to configure Azure Search due to {e}")
+        logger.error("Make sure every api keys or end pints are correct")
 
     #process the pdf
     pdf_file = glob.glob(os.path.join(file_path , "*.pdf"))
     if not pdf_file:
-        logging.warning(f"pdf path is not there fix it : {file_path}")
-    logging.info("path_file taken succesfully")
+        logger.warning(f"pdf path is not there fix it : {file_path}")
+    logger.info("path_file taken succesfully")
 
     all_splits=[]
     for pdfs in pdf_file:
         try:
-            logging.info(f"taking the pdf one by one : {os.path.basename(pdfs)} ")
+            logger.info(f"taking the pdf one by one : {os.path.basename(pdfs)} ")
             #loading the pdf
             loader = PyPDFLoader(pdfs)
             raw_docs = loader.load()
@@ -96,31 +96,31 @@ def index_docs():
                     split.metadata["source"] = os.path.basename(pdf_file)
 
                 all_splits.extend(splitted_docs)
-                logging.info(f"splitted into {len(splitted_docs)} chunks")
+                logger.info(f"splitted into {len(splitted_docs)} chunks")
 
                 if splitted_docs:
-                    logging.info("documents spllited")
+                    logger.info("documents spllited")
 
             except Exception as e:
-                logging.error(f"spllitting couldnot happen from raw docs due to : {e}")
+                logger.error(f"spllitting couldnot happen from raw docs due to : {e}")
 
         except Exception as e:
-            logging.error(f"splliting failed due to : {e}")
+            logger.error(f"splliting failed due to : {e}")
 
         #adding the splitted documents in vector database to azure
         if all_splits:
-            logging.info(f"storing {len(all_splits)} chunks in database with index name = {index_name} ")
+            logger.info(f"storing {len(all_splits)} chunks in database with index name = {index_name} ")
             try:
                 vector_store.add_documents(documents=all_splits )
-                logging.info("="*60)
-                logging.info("stored all the documents in the database in Azure")
-                logging.info("="*60)
+                logger.info("="*60)
+                logger.info("stored all the documents in the database in Azure")
+                logger.info("="*60)
 
             except Exception as e:
-                logging.error(f"error occured while storing the embedded chunks in the database due to {e}")
+                logger.error(f"error occured while storing the embedded chunks in the database due to {e}")
 
         else:
-            logging.warning("no documents processed")
+            logger.warning("no documents processed")
 
 if __name__ == "__main__":
     index_docs()
