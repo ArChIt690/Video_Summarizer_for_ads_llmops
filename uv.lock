@@ -2016,12 +2016,14 @@ source = { virtual = "." }
 dependencies = [
     { name = "langchain-azure-ai" },
     { name = "langchain-mistralai" },
+    { name = "langgraph" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "langchain-azure-ai", specifier = ">=1.2.3" },
     { name = "langchain-mistralai", specifier = ">=1.1.6" },
+    { name = "langgraph", specifier = ">=1.2.11" },
 ]
 
 [[package]]
