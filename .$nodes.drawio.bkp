@@ -1,0 +1,143 @@
+<mxfile host="65bd71144e">
+    <diagram name="Page-1" id="mqv7wYbDSMggPjlP8be_">
+        <mxGraphModel dx="1309" dy="1590" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="h-5dhOeN011aLFctMEak-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="h-5dhOeN011aLFctMEak-1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="420" y="140" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <object label="" id="h-5dhOeN011aLFctMEak-1">
+                    <mxCell style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;fontStyle=0;align=center;verticalAlign=middle;" parent="1" vertex="1">
+                        <mxGeometry x="290" y="10" width="260" height="60" as="geometry"/>
+                    </mxCell>
+                </object>
+                <mxCell id="h-5dhOeN011aLFctMEak-2" value="" style="shape=stencil(fZbdcgIhDIWfZm8zQAg/17Z9j85U606tdqz9e/tmZ0c0uJ47xP0I5JwEBl59bp8/1kNwn6fj4W39M76ctgM/DCGM++36OJ50NPDjwKvN4bh+PR6+9i/z74/n6ctp9H74nlb4nbmSKZeJCu5vngmZ6jzzNAO7cX8FVKEsBuBKrgKg9oAE8gkCbLeUhEoEQKSUDZDLeWYRKIl8MEDRmHwfyBrBG6Amyu4+kDxxMoB3jhwgYu7TVAsVkFcWCs4CTBEoF4RctKeOxHIf8IXYpikHikAIf+MNUW94AGSSaoAoFIE3AlOyeWU+p2E5S9yfQZcQILVuQOwZdJNoS9Ls3wA5u2XZTIHECqeJ9kDpSaauRiNVcAY1QhdBzeLBli5WazpkSsBLV25uRaqWRyFawTQzRRIQYirJzq5atkBqLfouwqUxLBepthWb10vrWZY6UOAeyKCCtDV625mm9gmUC4Wc3VLJMMIE1BsA2FW9JraVlQB7n3c9oMKhCLEvIM1zBPZ25/umNQ1tVEC2G+fFCC8g398O2hNQuQlVu752DBfA+q0ptnqO5JFmeuIuo9DY7KjY71UxdJV4EntifPWorW++R/dC4t7V3DlIB5cHx2bc7eb3yvX//QNFp+bHDT/+Aw==);lineShape=1;strokeColor=default;" parent="1" vertex="1">
+                    <mxGeometry x="548.6679486354444" y="-40.524666179176165" width="4.672539772115442" height="4.665236216357698" as="geometry"/>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-3" value="Download from yt" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=25;" parent="1" vertex="1">
+                    <mxGeometry x="325" y="10" width="200" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="h-5dhOeN011aLFctMEak-5" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="425" y="270" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-5" value="Store it in temporary file" style="rounded=1;whiteSpace=wrap;html=1;fontSize=17;" parent="1" vertex="1">
+                    <mxGeometry x="345" y="140" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="h-5dhOeN011aLFctMEak-7" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="430" y="390" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-7" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Upload in Azure Video Indexer&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;fontStyle=0;align=center;verticalAlign=middle;" parent="1" vertex="1">
+                    <mxGeometry x="290" y="270" width="280" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="h-5dhOeN011aLFctMEak-9" target="h-5dhOeN011aLFctMEak-11" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="433" y="510" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-9" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Delete the temporary video after uploading to video indexer&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;fontStyle=0;align=center;verticalAlign=middle;" parent="1" vertex="1">
+                    <mxGeometry x="295" y="400" width="275" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="h-5dhOeN011aLFctMEak-11" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="432.7058823529412" y="610" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-11" value="Wait for the video indexer to give insights" style="rounded=1;whiteSpace=wrap;html=1;fontSize=18;" parent="1" vertex="1">
+                    <mxGeometry x="306.25" y="510" width="252.5" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-13" value="Extracts and stores the clean data from the raw data" style="rounded=1;whiteSpace=wrap;html=1;fontSize=18;" parent="1" vertex="1">
+                    <mxGeometry x="317.5" y="610" width="252.5" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-15" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="250" y="700" as="sourcePoint"/>
+                        <mxPoint x="250" y="-30" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-16" value="" style="endArrow=none;html=1;rounded=0;" parent="1" source="h-5dhOeN011aLFctMEak-19" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="250" y="-30" as="sourcePoint"/>
+                        <mxPoint x="590" y="-30" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-17" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="590" y="700.9412339154412" as="sourcePoint"/>
+                        <mxPoint x="590" y="-30" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-18" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="250" y="700" as="sourcePoint"/>
+                        <mxPoint x="590" y="700" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-20" value="" style="endArrow=none;html=1;rounded=0;" parent="1" target="h-5dhOeN011aLFctMEak-19" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="250" y="-30" as="sourcePoint"/>
+                        <mxPoint x="590" y="-30" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-19" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Index Node&lt;/font&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="306.25" y="-60" width="210" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="h-5dhOeN011aLFctMEak-21" target="h-5dhOeN011aLFctMEak-23" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="425.69294117647075" y="940" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-21" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Give the credentials and details of the LLM , Embedding model and Azure Search&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="305.34000000000003" y="820" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="h-5dhOeN011aLFctMEak-23" target="h-5dhOeN011aLFctMEak-25" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="425.69294117647075" y="1040" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-23" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;Get the Ocr text ,&amp;nbsp; and join with the transcript and store as a query&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="310.52" y="920" width="229.65" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="h-5dhOeN011aLFctMEak-25" target="h-5dhOeN011aLFctMEak-27" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="425.6470588235295" y="1240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-25" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;do a similiarity search using the azure ai search using the query text&amp;nbsp; in the rag to find relevant info related to that and store in a variable&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="268.34" y="1040" width="314" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="h-5dhOeN011aLFctMEak-27" target="h-5dhOeN011aLFctMEak-29" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="425.6470588235295" y="1350" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-27" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;take the page content out from that variable ad store it another variable&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="248.76" y="1230" width="352" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="h-5dhOeN011aLFctMEak-29" target="h-5dhOeN011aLFctMEak-32" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-29" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Give the system prompt to take that variable , tells wheather it has violated or not , return strictly in a specific json format&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="279.19" y="1350" width="292.31" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="h-5dhOeN011aLFctMEak-32" target="h-5dhOeN011aLFctMEak-35" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="424.47058823529414" y="1630" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-32" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Gives the user prompt which takes ocr transcript and the query&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="287" y="1510" width="275.52" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="h-5dhOeN011aLFctMEak-35" value="&lt;font style=&quot;font-size: 19px;&quot;&gt;invoking the llm&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="287.38" y="1630" width="274.76" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
