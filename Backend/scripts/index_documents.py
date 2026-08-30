@@ -122,5 +122,5 @@ def index_docs():
         else:
             logging.warning("no documents processed")
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     index_docs()
