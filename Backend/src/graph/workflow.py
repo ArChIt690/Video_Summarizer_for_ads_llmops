@@ -5,7 +5,7 @@ from langgraph.graph import StateGraph , END
 
 def create_graph():
     '''
-    creates the wrokflow of the agent from start to finish. The order of how it will be executed.
+    creates the workflow of the agent from start to finish. The order of how it will be executed.
     '''
     workflow = StateGraph(VideoAudit)
 
