@@ -46,4 +46,22 @@ class VideoIndexer:
             
         return response.json().get("accessToken")
 
+    #download the video from yt temporarily using 'yt-dlp'
+    def yt_download(self , video_url , output_path="temp_video.mp4"):
+        ydf_opts = {
+            "format" : "best[ext=mp4]",
+            "outtmpl" : output_path,
+            "quiet" : True,
+            "overwrite" : True,
+        }
+
+        try:
+            with yt_dlp.YoutubeDL(ydf_opts) as ydl:
+                ydl.download([video_url])
+                logger.info(f"Video download succesful")
+                return output_path
+        except Exception as e:
+            raise Exception(f"Failed to download video from {video_url} due to {e}")
+
+    #Upload the video to Azure Video Indexer and get the video ID
     
