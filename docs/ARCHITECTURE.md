@@ -454,7 +454,7 @@ A confidence score invites a threshold argument and gives false precision about 
 
 ## Related documents
 
-- [README](../README.md) — setup, usage, API reference
-- [CONTRIBUTING](../CONTRIBUTING.md) — development workflow and conventions
-- [SECURITY](../SECURITY.md) — credential handling and threat model
+- [README](../README.md) — setup, usage, API reference, development conventions
+- [SECURITY](SECURITY.md) — credential handling and hardening checklist
+- [CHANGELOG](../CHANGELOG.md) — what shipped when
 - `nodes.drawio` — editable source of the architecture diagram

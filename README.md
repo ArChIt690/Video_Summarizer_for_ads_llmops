@@ -823,78 +823,92 @@ Each of these is tracked in the [roadmap](#-roadmap).
 
 ---
 
-## 🤝 Contributing
+## 🧑‍💻 Development
 
-Contributions are welcome — bug fixes, policy packs, tests, and documentation especially.
+### Working on the code
 
 ```bash
-# 1. Fork, then clone your fork
-git clone https://github.com/<you>/Video_Summarizer_for_ads_llmops.git
-cd Video_Summarizer_for_ads_llmops
-
-# 2. Install with dev extras
-uv sync
-
-# 3. Branch
-git checkout -b feat/conditional-edges
-
-# 4. Make your change, then verify
-uv run ruff check .
-uv run pytest            # once tests exist
-
-# 5. Commit and open a PR
-git commit -m "feat(graph): add conditional edge for empty extraction"
-git push origin feat/conditional-edges
+uv sync                                   # install locked deps
+uv run ruff check . --fix                 # lint
+uv run ruff format .                      # format
+uv run pytest                             # once tests exist
+uv run uvicorn Backend.src.api.server:app --reload
 ```
 
-**Conventions**
+### Conventions
 
 - Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/): `feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `chore:`.
-- New graph nodes go in `Backend/src/graph/nodes.py` and are wired in `workflow.py`.
-- New external integrations go in `Backend/src/services/` as a class with a narrow public surface.
-- Every node must return a partial state dict and must never raise past its own `try/except` — failures belong in the `error` list.
+- New graph nodes go in `Backend/src/graph/nodes.py` and are wired by **string name** in `workflow.py`.
+- New external integrations go in `Backend/src/services/` as a class that reads its own config from the environment and keeps URLs and tokens internal.
+- Every node returns a **partial** state dict and never raises past its own `try/except` — failures belong in the `error` list with `final_status = "FAIL"`.
+- `compliance_result` and `error` use `operator.add` reducers. Append to them; never reassign.
+- Configuration comes from the environment. Add every new variable to both `.env.example` and the [configuration table](#-configuration).
 - Never commit `.env`, credentials, or downloaded media.
 
-Full details in [CONTRIBUTING.md](CONTRIBUTING.md). By participating you agree to the [Code of Conduct](CODE_OF_CONDUCT.md).
+### Adding a node
+
+```python
+# nodes.py
+def my_check_node(state: VideoAudit) -> Dict[str, Any]:
+    """Checks X and appends findings to compliance_result."""
+    try:
+        ...
+        return {"compliance_result": findings}
+    except Exception as e:
+        logger.error(f"my_check_node failed: {e}")
+        return {"error": [str(e)], "final_status": "FAIL"}
+
+# workflow.py
+workflow.add_node("my_check_node", my_check_node)
+workflow.add_edge("audit_content_node", "my_check_node")
+workflow.add_edge("my_check_node", END)
+```
+
+### Planned test layout
+
+```
+tests/
+├── unit/
+│   ├── test_state.py            # reducer behaviour
+│   ├── test_nodes.py            # node logic, mocked services
+│   └── test_video_indexer.py    # client, mocked requests
+├── integration/
+│   └── test_workflow.py         # full graph, mocked Azure
+└── conftest.py
+```
+
+Mock every Azure call so the suite runs offline and costs nothing. Test the failure paths at least as carefully as the success path — fail-closed behaviour is the whole point of the design. Include a fixture with a malformed LLM response (markdown fences, trailing prose, invalid JSON) and assert the node still returns `FAIL` rather than raising.
 
 ---
 
 ## 🔐 Security
 
 - Video Indexer access uses `DefaultAzureCredential` → ARM token → short-lived account token. **No Video Indexer secret is ever stored.**
+- All other keys are read from the environment. `.env` is gitignored; `.env.example` holds placeholders only.
 - Downloaded media is written to a local scratch file and deleted after upload.
-- All keys are read from the environment. `.env` is gitignored.
 - Uploads are created with `privacy: "Private"`.
 
-Found a vulnerability? **Do not open a public issue.** See [SECURITY.md](SECURITY.md) for private disclosure instructions.
+`POST /audit` currently has **no authentication or rate limiting** and fetches a user-supplied URL server-side. Do not expose it publicly without a gateway in front of it. Full details, including the hardening checklist and the known gaps, are in [docs/SECURITY.md](docs/SECURITY.md).
 
 ---
 
-## 📄 License
-
-Released under the [MIT License](LICENSE). © 2026 Archit Chakraborty.
-
-The bundled policy PDFs in `Backend/data/` are the property of their respective publishers (US FTC, Google/YouTube) and are included for demonstration under their own terms.
-
----
-
-## 🙏 Acknowledgements
+## 🧰 Built with
 
 - [LangChain](https://github.com/langchain-ai/langchain) and [LangGraph](https://github.com/langchain-ai/langgraph) — agent orchestration
 - [Azure AI Video Indexer](https://learn.microsoft.com/azure/azure-video-indexer/) — multimodal media insights
+- [Azure AI Search](https://learn.microsoft.com/azure/search/) — vector retrieval
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp) — media ingestion
 - [FastAPI](https://github.com/fastapi/fastapi) — the API layer
 - [uv](https://github.com/astral-sh/uv) — dependency management
-- The [US FTC](https://www.ftc.gov/) endorsement guides, which make up the seed policy corpus
+
+The policy PDFs in `Backend/data/` are the property of their respective publishers (US FTC, Google/YouTube) and are used here under their own terms.
 
 ---
 
 <div align="center">
 
-**Built by [Archit Chakraborty](https://github.com/ArChIt690)**
+**Archit Chakraborty** · 2026
 
-If this project is useful to you, consider leaving a ⭐
-
-[Report a bug](https://github.com/ArChIt690/Video_Summarizer_for_ads_llmops/issues/new?labels=bug) · [Request a feature](https://github.com/ArChIt690/Video_Summarizer_for_ads_llmops/issues/new?labels=enhancement) · [Discussions](https://github.com/ArChIt690/Video_Summarizer_for_ads_llmops/discussions)
+📖 [Architecture deep dive](docs/ARCHITECTURE.md) · 🔐 [Security model](docs/SECURITY.md) · 📋 [Changelog](CHANGELOG.md)
 
 </div>

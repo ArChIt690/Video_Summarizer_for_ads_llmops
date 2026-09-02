@@ -10,12 +10,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- `README.md` — full project documentation: architecture diagrams, quickstart, API reference, configuration table, deployment guide, roadmap.
-- `docs/ARCHITECTURE.md` — deep dive on the state machine, data flow, and design decisions.
-- `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md` — community health files.
+- `README.md` — full project documentation: architecture diagrams, quickstart, API reference, configuration table, deployment guide, development conventions, roadmap.
+- `docs/ARCHITECTURE.md` — deep dive on the state machine, data flow, prompt structure, and design decisions.
+- `docs/SECURITY.md` — credential handling, data handling, and the hardening checklist for exposing the API.
 - `.env.example` — environment template with placeholder values.
-- `LICENSE` — MIT.
-- GitHub issue and pull request templates.
+- `CHANGELOG.md`.
 
 ### Changed
 - `.gitignore` expanded to cover `__pycache__`, tool caches, downloaded media scratch files, editor directories, and draw.io backups.

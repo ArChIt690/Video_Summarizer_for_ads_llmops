@@ -1,7 +1,7 @@
 [project]
 name = "video-summarizer-for-ads-llmops"
 version = "0.1.0"
-description = "Add your description here"
+description = "Multimodal LLMOps agent that audits video ads for advertising-policy compliance using Azure Video Indexer, RAG over policy documents, and a LangGraph state machine."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
