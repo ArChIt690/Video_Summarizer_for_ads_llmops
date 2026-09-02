@@ -11,10 +11,9 @@ Give it a YouTube URL. It downloads the video, extracts the spoken transcript an
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.141-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Azure](https://img.shields.io/badge/Azure-AI_Foundry-0078D4?logo=microsoftazure&logoColor=white)](https://ai.azure.com/)
 [![uv](https://img.shields.io/badge/deps-uv-DE5FE9?logo=astral&logoColor=white)](https://github.com/astral-sh/uv)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/status-alpha-orange.svg)](#-project-status)
 
-[Overview](#-overview) • [Architecture](#-architecture) • [Quickstart](#-quickstart) • [API](#-api-reference) • [Configuration](#-configuration) • [Roadmap](#-roadmap) • [Contributing](#-contributing)
+[Overview](#-overview) • [Architecture](#-architecture) • [Quickstart](#-quickstart) • [API](#-api-reference) • [Configuration](#-configuration) • [Roadmap](#-roadmap)
 
 </div>
 
@@ -46,10 +45,9 @@ Give it a YouTube URL. It downloads the video, extracts the spoken transcript an
 - [Project status](#-project-status)
 - [Known limitations](#-known-limitations)
 - [Roadmap](#-roadmap)
-- [Contributing](#-contributing)
+- [Development](#-development)
 - [Security](#-security)
-- [License](#-license)
-- [Acknowledgements](#-acknowledgements)
+- [Built with](#-built-with)
 
 ---
 
@@ -408,7 +406,7 @@ LANGCHAIN_API_KEY=<langsmith-key>
 LANGCHAIN_PROJECT=video-ad-compliance
 ```
 
-> ⚠️ **`.env` is gitignored and must stay that way.** Never commit real credentials. See [SECURITY.md](SECURITY.md).
+> ⚠️ **`.env` is gitignored and must stay that way.** Never commit real credentials. See [docs/SECURITY.md](docs/SECURITY.md).
 
 ### 4. Build the knowledge base
 
@@ -766,7 +764,7 @@ Enable the system-assigned managed identity and grant it **Contributor** on the 
 | Tests | 🔴 | None yet |
 | CI | 🔴 | None yet |
 
-Contributions that close any of these are very welcome — see [Contributing](#-contributing).
+Each of these is tracked in the [roadmap](#-roadmap).
 
 ---
 
