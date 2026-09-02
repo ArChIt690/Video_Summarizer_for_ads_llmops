@@ -11,5 +11,6 @@ dependencies = [
     "langchain-mistralai>=1.1.6",
     "langchain-text-splitters>=1.1.2",
     "langgraph>=1.2.11",
+    "pprintpp>=0.4.0",
     "pypdf>=6.16.2",
 ]
