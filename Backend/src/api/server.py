@@ -64,7 +64,7 @@ async def audit_video(request = AuditRequest):
         logger.error(f"Error in Backend  for fetching AuditResponse due to {e}")
         raise HTTPException(
             status_code=500,
-            detail=f"Workflow execution failed : {str{e}}",
+            detail=f"Workflow execution failed : {str(e)}",
         )
 
 @app.get("/health")
