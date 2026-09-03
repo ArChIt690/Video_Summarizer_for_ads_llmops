@@ -42,3 +42,4 @@ Thumbs.db
 # ── draw.io backups ──────────────────────────────────────────
 .$*.drawio.bkp
 *.drawio.dtmp
+nodes.drawio
